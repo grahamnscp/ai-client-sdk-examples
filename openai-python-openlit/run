@@ -1,0 +1,2 @@
+#docker run --rm -it --env-file .env openai-py
+docker run --rm -it -e OTEL_EXPORTER_OTLP_ENDPOINT=$OTEL_EXPORTER_OTLP_ENDPOINT -e OPENAI_API_KEY=$OPENAI_TOKEN openai-client-otel
