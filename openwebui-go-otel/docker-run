@@ -1,0 +1,5 @@
+docker run --rm -it \
+    -e OPEN_WEBUI_HOSTNAME=$OPEN_WEBUI_HOSTNAME \
+    -e OPEN_WEBUI_API_KEY=$OPEN_WEBUI_API_KEY \
+    -e OTEL_EXPORTER_OTLP_HOSTNAME=$OTEL_EXPORTER_OTLP_HOSTNAME \
+    openwebui-client-otel
