@@ -1,0 +1,32 @@
+
+curl -k -H "Authorization: Bearer $OPEN_WEBUI_API_KEY" https://$OPEN_WEBUI_HOSTNAME:443/api/config | jq 
+
+curl -k -H "Authorization: Bearer $OPEN_WEBUI_API_KEY" https://$OPEN_WEBUI_HOSTNAME:443/api/models | jq '.data[].id'
+
+
+# proxy ollama via open-webui discussion
+#  https://github.com/open-webui/open-webui/discussions/5033
+#  https://docs.openwebui.com/getting-started/api-endpoints/#swagger-documentation-links
+#   chart ENV=dev
+#
+# https://${OPEN_WEBUI_HOSTNAME}/docs for swagger api doc
+
+curl -sk https://$OPEN_WEBUI_HOSTNAME:443/ollama/v1/chat/completions \
+    -H "Authorization: Bearer $OPEN_WEBUI_API_KEY" \
+    -H "Content-Type: application/json" \
+    -X POST \
+    -d '{
+          "model": "gemma:7B",
+          "messages": [
+            {
+              "role": "system",
+              "content": "You are a helpful assistant."
+            },
+            {
+              "role": "user",
+              "content": "How hot is the Sun?"
+            }
+          ]
+        }' | jq '.choices[].message.content'
+
+
