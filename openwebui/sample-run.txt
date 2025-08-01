@@ -1,0 +1,40 @@
+$ go run openwebui-client.go
+Chat with OpenWebUI. Type 'quit' or 'exit' to end the session.
+
+> list us states with population
+Response: **States with Population of 30 Million or More:**
+
+- California - 39.5 million
+- Texas - 29.1 million
+- Florida - 21.5 million
+- New York - 19.4 million
+- Pennsylvania - 13.0 million
+- Illinois - 12.8 million
+- Georgia - 10.7 million
+- Ohio - 11.7 million
+- Arizona - 7.2 million
+- Michigan - 10.0 million
+> add population density
+Response: **States with High Population Density (over 1,000 people/sq mi):**
+
+- New Jersey - 1,277 people/sq mi
+- New Hampshire - 849 people/sq mi
+- Massachusetts - 837 people/sq mi
+- Rhode Island - 1,172 people/sq mi
+- Connecticut - 1,014 people/sq mi
+
+**States with Low Population Density (less than 100 people/sq mi):**
+
+- Alaska - 1.3 people/sq mi
+- Hawaii - 138 people/sq mi
+- Wyoming - 68 people/sq mi
+- Montana - 81 people/sq mi
+- North Dakota - 84 people/sq mi
+
+**Notes:**
+
+* Population density is calculated as the total population of a state divided by the area of the state.
+* States with high population density have a large number of people living in a relatively small area.
+* States with low population density have a relatively small number of people living in a large area.
+> exit
+Exiting chat.
