@@ -1,0 +1,37 @@
+$ go run openwebui-client-otel.go
+Chat with OpenWebUI. Type 'quit' or 'exit' to end the session.
+
+> why is the sea blue
+Response: **The sea is blue due to:**
+
+**1. Scattering of sunlight:**
+
+* Sunlight is composed of all the colors of the rainbow.
+* When sunlight interacts with water molecules, the blue wavelength is scattered more efficiently than other colors.
+* Shorter wavelengths like blue light tend to bounce off water molecules in random directions, resulting in a scattering effect.
+
+**2. Absorption of other wavelengths:**
+
+* As sunlight passes through water, it absorbs certain wavelengths of light.
+* Red and orange light waves have longer wavelengths and are absorbed less efficiently than blue light.
+* This means that more blue light is scattered and reaches our eyes.
+
+**3. Depth of the water:**
+
+* Deeper parts of the ocean absorb more light, making the water darker.
+* The depth of the water also affects the color we see due to the process of water molecules absorbing and scattering light.
+
+**4. Time of day and weather:**
+
+* The time of day and weather conditions can also influence the color of the sea.
+* At sunrise and sunset, when the sunlight is filtered through more atmosphere, the water may appear red or orange.
+* Cloud cover or pollution can also affect the color of the sea.
+
+**5. Chromacity:**
+
+* Chromacity is the phenomenon where light of different wavelengths travels at different speeds.
+* This causes the light to be dispersed, resulting in the separation of colors.
+* The blue light travels at a slightly slower speed than other colors, which is why it is often scattered and appears more prominently in the sky and the sea.
+
+> exit
+Exiting chat.
