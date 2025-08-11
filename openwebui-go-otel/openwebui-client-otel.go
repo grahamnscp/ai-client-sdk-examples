@@ -16,6 +16,7 @@ import (
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp"
+
 	//"go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc"
 	//"google.golang.org/grpc"
 	"go.opentelemetry.io/otel/sdk/resource"
@@ -24,7 +25,7 @@ import (
 )
 
 var apiURL = fmt.Sprintf("http://%s/ollama/v1/chat/completions",
-                             os.Getenv("OPEN_WEBUI_HOSTNAME"))
+	os.Getenv("OPEN_WEBUI_HOSTNAME"))
 
 var apiKey = os.Getenv("OPEN_WEBUI_API_KEY")
 
@@ -55,17 +56,17 @@ func initProvider() (*trace.TracerProvider, error) {
 
 	// Create a new OTLP trace exporter using gRPC.
 	ctx := context.Background()
-  /*
-	exporter, err := otlptracegrpc.New(ctx,
-		otlptracegrpc.WithInsecure(),
-		otlptracegrpc.WithEndpoint(openLitEndpoint),
-		otlptracegrpc.WithDialOption(grpc.WithBlock()),
-	)
-  */
+	/*
+		exporter, err := otlptracegrpc.New(ctx,
+			otlptracegrpc.WithInsecure(),
+			otlptracegrpc.WithEndpoint(openLitEndpoint),
+			otlptracegrpc.WithDialOption(grpc.WithBlock()),
+		)
+	*/
 	exporter, err := otlptracehttp.New(ctx,
 		otlptracehttp.WithInsecure(),
 		otlptracehttp.WithEndpoint(openLitEndpoint),
-  )
+	)
 	if err != nil {
 		return nil, fmt.Errorf("failed to create OTLP exporter: %w", err)
 	}
@@ -82,7 +83,6 @@ func initProvider() (*trace.TracerProvider, error) {
 	otel.SetTracerProvider(tp)
 	return tp, nil
 }
-
 
 // Main
 func main() {
@@ -105,7 +105,6 @@ func main() {
 	ctx, sessionSpan := tracer.Start(context.Background(), "chat-session")
 	defer sessionSpan.End()
 
-
 	// Initialize a list to hold the chat history.
 	var chatHistory []Message
 
@@ -118,16 +117,16 @@ func main() {
 	fmt.Println("Chat with OpenWebUI. Type 'quit' or 'exit' to end the session.")
 	reader := bufio.NewReader(os.Stdin)
 
-  // Create a custom HTTP client that skips TLS certificate verification
+	// Create a custom HTTP client that skips TLS certificate verification
 	tr := &http.Transport{
 		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
 	}
-  // create with otelhttp
+	// create http client with otelhttp
 	client := &http.Client{
 		Transport: otelhttp.NewTransport(tr),
 	}
 
-  // loop on chat..
+	// loop on chat..
 	for {
 		// Prompt the user for input
 		fmt.Print("> ")
@@ -223,8 +222,7 @@ func main() {
 			fmt.Println("Response: No response received.")
 		}
 
-    // tidy tracing span
+		// tidy tracing span
 		turnSpan.End()
 	}
 }
-
