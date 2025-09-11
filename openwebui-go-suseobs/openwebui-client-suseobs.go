@@ -75,7 +75,7 @@ func initProvider() (*trace.TracerProvider, error) {
 	*/
 
 	// http endpoint
-  // https://pkg.go.dev/go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp@v1.38.0#Option
+	// https://pkg.go.dev/go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp@v1.38.0#Option
 	exporter, err := otlptracehttp.New(ctx,
 		otlptracehttp.WithInsecure(),
 		otlptracehttp.WithEndpoint(suseObsHTTPEndpoint),
@@ -93,7 +93,9 @@ func initProvider() (*trace.TracerProvider, error) {
 		trace.WithResource(resource.NewWithAttributes(
 			semconv.SchemaURL,
 			semconv.ServiceName("go-chat-suseobs"),
-			attribute.String("environment", "dev"),
+			semconv.ServiceVersion("1.0"),
+			semconv.ServiceNamespace("local"),
+			semconv.DeploymentEnvironment("dev"),
 		)),
 	)
 	otel.SetTracerProvider(tp)
