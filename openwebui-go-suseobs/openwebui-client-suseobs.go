@@ -24,6 +24,7 @@ import (
 	semconv "go.opentelemetry.io/otel/semconv/v1.24.0"
 )
 
+// Global Variables
 var apiURL = fmt.Sprintf("http://%s/ollama/v1/chat/completions",
 	os.Getenv("OPEN_WEBUI_HOSTNAME"))
 
