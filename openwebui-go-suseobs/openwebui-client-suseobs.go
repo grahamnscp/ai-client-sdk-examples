@@ -97,6 +97,7 @@ func initProvider() (*trace.TracerProvider, error) {
 			semconv.ServiceVersion("1.0"),
 			semconv.ServiceNamespace("local"),
 			semconv.DeploymentEnvironment("dev"),
+      semconv.TelemetrySDKName("openlit"),
 		)),
 	)
 	otel.SetTracerProvider(tp)
