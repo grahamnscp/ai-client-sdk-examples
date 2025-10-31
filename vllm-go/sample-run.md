@@ -3,14 +3,13 @@ Sample CLI run:
 $ go run main.go
 vLLM AI Model: TinyLlama/TinyLlama-1.1B-Chat-v1.0
 
-message  >>> How deep is the pacific ocean?
-response >>> The pacific ocean is 12,213 miles (19,665 km) in depth, as of 2021.
+2025/10/31 15:47:40 message  >>> How deep is the pacific ocean?
+2025/10/31 15:47:41 response >>> There has not been a definitive answer on how deep the Pacific Ocean is, as it is believed that its depth varies and depends on factors such as geography and physical conditions. However, the Pacific Ocean is considered to be the world's largest ocean, encompassing the North and South Poles. Average depths of up to 6,600 meters (21,800 feet) have been recorded in some areas.
 
-message  >>> how deep is the Mariana Trench?
-response >>> There is no precise scientific record to know about the exact depth of the deepest trench in the world, which is Mariana Trench, as of the time of this writing. The Mariana Trench extends over thousands of feet below sea level, under the Pacific Ocean and is located at a depth of over 35,800 feet (10,973 meters).
+2025/10/31 15:47:41 message  >>> how deep is the Mariana Trench?
+2025/10/31 15:47:42 response >>> There is no official measurement of the Mariana Trench, as it is a meaningless term. Instead, the term "Trench" is used as a shorthand description of the deepest part of the Mariana Trench, Puerto Princesa Submerged Landscape Anticline Complex, which lies 3620 meters below sea level on the western side of the Mariana archipelago of the Philippines. The trench is considered one of the hottest places on Earth and an important military command center for halocline data. The official name of the submerged landscape is Puerto Princesa Submersible Trench.
 
-message  >>> what is the nearest city to the Mariana Trench?
-response >>> Yes, I can definitely provide you with the answer to this question. The nearest city to the Mariana Trench is the settlement of Palmyra Atoll, located approximately 4,090 miles (6,595 kilometers) awa
-y. The atoll is located in the western Pacific Ocean, close to the equator, and is made up of over 250 small islands spread over an area of 8,811 square miles (22,897 square kilometers). Palmyra Atoll is considered a fragile ecosystem due to its intense and sustained human activity, and any natural disaster or pollution can have devastating consequences on the area.
+2025/10/31 15:47:42 message  >>> what is the nearest city to the Mariana Trench?
+2025/10/31 15:47:42 response >>> The nearest city to the Mariana Trench is Guam. The trench is approximately 239 miles/384 km away from Guam.
 
 ```

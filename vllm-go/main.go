@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+  "log"
 
 	vllmChat "vllm-go/chat"
 	vllmModels "vllm-go/models"
@@ -18,23 +19,23 @@ func main() {
 
   // prompt 1
   prompt := "How deep is the pacific ocean?"
-  fmt.Printf("message  >>> %s\n", prompt)
+  log.Printf("message  >>> %s\n", prompt)
   aiResp := vllmChat.AIChat(model, role, prompt)
-  fmt.Printf("response >>> %s\n", aiResp)
+  log.Printf("response >>> %s\n", aiResp)
   fmt.Printf("\n")
 
   // prompt 2
   prompt = "how deep is the Mariana Trench?"
-  fmt.Printf("message  >>> %s\n", prompt)
+  log.Printf("message  >>> %s\n", prompt)
   aiResp = vllmChat.AIChat(model, role, prompt)
-  fmt.Printf("response >>> %s\n", aiResp)
+  log.Printf("response >>> %s\n", aiResp)
   fmt.Printf("\n")
 
   // prompt 3
   prompt = "what is the nearest city to the Mariana Trench?"
-  fmt.Printf("message  >>> %s\n", prompt)
+  log.Printf("message  >>> %s\n", prompt)
   aiResp = vllmChat.AIChat(model, role, prompt)
-  fmt.Printf("response >>> %s\n", aiResp)
+  log.Printf("response >>> %s\n", aiResp)
   fmt.Printf("\n")
 
 }
